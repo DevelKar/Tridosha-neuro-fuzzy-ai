@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tridosha Ayurvedic Constitution Analysis - Discover your unique health profile">
+  <meta name="theme-color" content="#5472d9">
+  <title>Tridosha Analyzer - Ayurvedic Health Assessment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1>Tridosha Analyzer</h1>
+        <p class="subtitle">Discover Your Ayurvedic Constitution</p>
+      </div>
+    </header>
 
+    <main class="main-content">
+      
+      <!-- FORM -->
+      <div class="form-section" id="formSection">
+        <div class="form-container">
+          <h2>Health Assessment</h2>
+          <p class="form-description">
+            Answer a few questions about your health to determine your unique constitution profile.
+          </p>
+          
+          <form id="doshaForm" class="form">
+            
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" min="1" max="150" required>
+            </div>
+
+            <div class="form-group">
+              <label for="sleep">Sleep Quality</label>
+              <select id="sleep" required>
+                <option value="">Select...</option>
+                <option value="vata">Light, irregular sleep</option>
+                <option value="pitta">Good sleep, early waking</option>
+                <option value="kapha">Deep, long sleep</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="digestion">Digestion</label>
+              <select id="digestion" required>
+                <option value="">Select...</option>
+                <option value="vata">Variable</option>
+                <option value="pitta">Strong</option>
+                <option value="kapha">Slow</option>
+              </select>
+            </div>
+
+            <!-- FIXED ID -->
+            <div class="form-group">
+              <label for="body_temp">Body Temperature</label>
+              <select id="body_temp" required>
+                <option value="">Select...</option>
+                <option value="vata">Cool</option>
+                <option value="pitta">Warm</option>
+                <option value="kapha">Moderate</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="stress">Stress Response</label>
+              <select id="stress" required>
+                <option value="">Select...</option>
+                <option value="vata">Anxious</option>
+                <option value="pitta">Irritable</option>
+                <option value="kapha">Calm</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="diet">Diet Preference</label>
+              <select id="diet" required>
+                <option value="">Select...</option>
+                <option value="vata">Light</option>
+                <option value="pitta">Moderate</option>
+                <option value="kapha">Heavy</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Analyze My Constitution
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="results-section hidden">
+        <div class="results-container">
+
+          <div class="results-header">
+            <h2>Your Tridosha Analysis</h2>
+            <button class="btn btn-secondary" onclick="resetForm()">New Assessment</button>
+          </div>
+
+          <div class="dosha-cards">
+
+            <div class="dosha-card">
+              <h3>Vata</h3>
+              <div class="progress-bar">
+                <div id="vataProgress" class="progress-fill"></div>
+              </div>
+              <p id="vataPercentage">0%</p>
+            </div>
+
+            <div class="dosha-card">
+              <h3>Pitta</h3>
+              <div class="progress-bar">
+                <div id="pittaProgress" class="progress-fill"></div>
+              </div>
+              <p id="pittaPercentage">0%</p>
+            </div>
+
+            <div class="dosha-card">
+              <h3>Kapha</h3>
+              <div class="progress-bar">
+                <div id="kaphaProgress" class="progress-fill"></div>
+              </div>
+              <p id="kaphaPercentage">0%</p>
+            </div>
+
+          </div>
+
+          <div class="constitution-result">
+            <h3>Dominant Dosha</h3>
+            <div id="constitutionType"></div>
+          </div>
+
+          <div class="recommendations">
+            <h3>Recommendations</h3>
+            <div id="recommendationsList"></div>
+          </div>
+
+          <!-- NEW: Explanation -->
+          <div class="recommendations">
+            <h3>Explanation</h3>
+            <div id="explanationText"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <p>Tridosha Analyzer | Ayurvedic Health Assessment</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
