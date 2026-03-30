@@ -1,0 +1,1 @@
+# Tridosha-neuro-fuzzy-ai
