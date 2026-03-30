@@ -1,1 +1,275 @@
-
+[
+  {
+    "conditions": {
+      "digestion": "strong",
+      "body_temp": "high"
+    },
+    "effect": {
+      "Pitta": 30
+    },
+    "explanation": "Strong digestion and high body temperature indicate Pitta dominance — the fire element governs both metabolic intensity and thermal regulation"
+  },
+  {
+    "conditions": {
+      "digestion": "strong",
+      "stress": "high"
+    },
+    "effect": {
+      "Pitta": 25
+    },
+    "explanation": "Intense digestion combined with high stress reflects Pitta's sharp, competitive nature driving both physical and mental heat"
+  },
+  {
+    "conditions": {
+      "digestion": "strong",
+      "diet": "spicy"
+    },
+    "effect": {
+      "Pitta": 35
+    },
+    "explanation": "A strong digestive fire further fuelled by spicy food significantly amplifies Pitta — pungent taste is the primary Pitta aggravator"
+  },
+  {
+    "conditions": {
+      "body_temp": "high",
+      "sleep": "poor"
+    },
+    "effect": {
+      "Pitta": 20
+    },
+    "explanation": "Elevated body temperature causing poor sleep is a classic Pitta imbalance — excess fire disturbs the mind and prevents restful sleep"
+  },
+  {
+    "conditions": {
+      "body_temp": "high",
+      "stress": "high"
+    },
+    "effect": {
+      "Pitta": 30
+    },
+    "explanation": "High body heat paired with high stress points to acute Pitta aggravation — inflammation, irritability, and intensity are hallmarks"
+  },
+  {
+    "conditions": {
+      "digestion": "weak",
+      "sleep": "poor"
+    },
+    "effect": {
+      "Vata": 30
+    },
+    "explanation": "Weak, variable digestion and disturbed sleep are primary Vata symptoms — the air element creates irregularity in both gut motility and nervous system"
+  },
+  {
+    "conditions": {
+      "stress": "high",
+      "sleep": "poor"
+    },
+    "effect": {
+      "Vata": 35
+    },
+    "explanation": "High stress combined with poor sleep is the strongest Vata indicator — anxiety, restlessness, and insomnia are the hallmarks of aggravated Vata"
+  },
+  {
+    "conditions": {
+      "digestion": "weak",
+      "stress": "high"
+    },
+    "effect": {
+      "Vata": 25
+    },
+    "explanation": "Erratic digestion aggravated by high stress reflects Vata's instability — the nervous system and gut are both governed by the air-space element"
+  },
+  {
+    "conditions": {
+      "body_temp": "low",
+      "stress": "high"
+    },
+    "effect": {
+      "Vata": 20
+    },
+    "explanation": "Cold body temperature with high anxiety is a Vata combination — coldness and nervous overactivity are characteristic of excess air element"
+  },
+  {
+    "conditions": {
+      "diet": "veg",
+      "stress": "high",
+      "sleep": "poor"
+    },
+    "effect": {
+      "Vata": 30
+    },
+    "explanation": "A light vegetarian diet under high stress with sleep disruption collectively increases Vata — insufficient grounding and nourishment destabilises air-space"
+  },
+  {
+    "conditions": {
+      "digestion": "weak",
+      "body_temp": "low"
+    },
+    "effect": {
+      "Vata": 20,
+      "Kapha": 15
+    },
+    "explanation": "Slow digestion and low body temperature suggest both Vata (irregularity) and Kapha (sluggishness) influence — cold and damp suppress the digestive fire"
+  },
+  {
+    "conditions": {
+      "digestion": "weak",
+      "body_temp": "low",
+      "sleep": "good"
+    },
+    "effect": {
+      "Kapha": 35
+    },
+    "explanation": "Sluggish digestion, cold constitution, and excessive or heavy sleep are the defining triad of Kapha dominance — earth and water elements slow all processes"
+  },
+  {
+    "conditions": {
+      "sleep": "good",
+      "stress": "low",
+      "body_temp": "low"
+    },
+    "effect": {
+      "Kapha": 30
+    },
+    "explanation": "Deep sleep, calm disposition, and cool body temperature reflect Kapha's stable, heavy nature — the earth element promotes stillness and endurance"
+  },
+  {
+    "conditions": {
+      "diet": "mixed",
+      "body_temp": "low",
+      "digestion": "weak"
+    },
+    "effect": {
+      "Kapha": 25
+    },
+    "explanation": "A mixed diet with low body heat and weak digestion indicates Kapha accumulation — the digestive fire (Agni) is dampened by earth-water dominance"
+  },
+  {
+    "conditions": {
+      "stress": "low",
+      "digestion": "weak",
+      "sleep": "good"
+    },
+    "effect": {
+      "Kapha": 30
+    },
+    "explanation": "Calm temperament, heavy sleep, and poor digestion without stress is a strong Kapha signature — contentment masking metabolic sluggishness"
+  },
+  {
+    "conditions": {
+      "diet": "veg",
+      "stress": "low",
+      "sleep": "good"
+    },
+    "effect": {
+      "Kapha": 20
+    },
+    "explanation": "A vegetarian diet with low stress and restorative sleep gently elevates Kapha — sattvic, grounding qualities accumulate earth-water energy over time"
+  },
+  {
+    "conditions": {
+      "digestion": "moderate",
+      "body_temp": "normal",
+      "stress": "medium"
+    },
+    "effect": {
+      "Vata": 10,
+      "Pitta": 10,
+      "Kapha": 10
+    },
+    "explanation": "Balanced digestion, normal temperature, and moderate stress reflect a near-equilibrium Tridoshic state — no single dosha is significantly dominant"
+  },
+  {
+    "conditions": {
+      "digestion": "moderate",
+      "body_temp": "high",
+      "stress": "medium"
+    },
+    "effect": {
+      "Pitta": 20,
+      "Vata": 10
+    },
+    "explanation": "Moderate digestion with elevated heat and moderate stress tips the balance toward Pitta with secondary Vata involvement — fire is rising with some air restlessness"
+  },
+  {
+    "conditions": {
+      "diet": "spicy",
+      "stress": "medium",
+      "body_temp": "normal"
+    },
+    "effect": {
+      "Pitta": 20
+    },
+    "explanation": "Regular spicy diet under moderate stress gradually increases Pitta even when body temperature appears normal — the aggravation builds internally before manifesting externally"
+  },
+  {
+    "conditions": {
+      "diet": "spicy",
+      "body_temp": "high",
+      "sleep": "poor"
+    },
+    "effect": {
+      "Pitta": 40
+    },
+    "explanation": "The convergence of spicy diet, high body heat, and poor sleep represents the highest Pitta aggravation state — fire is simultaneously fed, retained, and inflaming the mind"
+  },
+  {
+    "conditions": {
+      "digestion": "weak",
+      "diet": "veg",
+      "stress": "medium"
+    },
+    "effect": {
+      "Vata": 20,
+      "Kapha": 10
+    },
+    "explanation": "Weak digestion on a light vegetarian diet with moderate stress creates a Vata-Kapha mixed influence — insufficient nourishment (Vata) and cold qualities (Kapha) coexist"
+  },
+  {
+    "conditions": {
+      "sleep": "poor",
+      "body_temp": "normal",
+      "diet": "mixed"
+    },
+    "effect": {
+      "Vata": 20
+    },
+    "explanation": "Sleep disruption alone, even with an otherwise balanced profile, is a reliable Vata indicator — Vata governs the nervous system and circadian rhythm"
+  },
+  {
+    "conditions": {
+      "digestion": "strong",
+      "sleep": "good",
+      "stress": "low"
+    },
+    "effect": {
+      "Pitta": 15,
+      "Kapha": 15
+    },
+    "explanation": "Strong digestion suggests Pitta fire while good sleep and low stress indicate Kapha stability — a Pitta-Kapha dual constitution with balanced Agni and groundedness"
+  },
+  {
+    "conditions": {
+      "body_temp": "low",
+      "sleep": "good",
+      "digestion": "moderate"
+    },
+    "effect": {
+      "Kapha": 25
+    },
+    "explanation": "Cool body temperature and heavy restorative sleep with moderate digestion is a classic mild Kapha dominance — earth-water provides stability but at the cost of metabolic speed"
+  },
+  {
+    "conditions": {
+      "stress": "high",
+      "diet": "spicy",
+      "sleep": "poor",
+      "body_temp": "high"
+    },
+    "effect": {
+      "Pitta": 45,
+      "Vata": 15
+    },
+    "explanation": "All four Pitta aggravators firing simultaneously — high stress, spicy food, sleep deprivation, and elevated temperature — produce the most extreme Pitta imbalance, with secondary Vata from nervous system overload"
+  }
+]
