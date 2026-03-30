@@ -5,7 +5,6 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -17,39 +16,40 @@ app.post("/api", (req, res) => {
   const { age, sleep, digestion, body_temp, stress, diet } = req.body;
 
   let scores = {
-    vata: 0,
-    pitta: 0,
-    kapha: 0,
+    Vata: 0,
+    Pitta: 0,
+    Kapha: 0,
   };
 
   let explanations = [];
   let recommendations = [];
 
-  // Apply rules
+  // ================= APPLY RULES =================
   rules.forEach((rule) => {
     let match = true;
 
     for (let key in rule.conditions) {
-      if (rule.conditions[key] !== req.body[key]) {
+      if (req.body[key] !== rule.conditions[key]) {
         match = false;
         break;
       }
     }
 
     if (match) {
-      // Add scores
-      scores.vata += rule.scores.vata || 0;
-      scores.pitta += rule.scores.pitta || 0;
-      scores.kapha += rule.scores.kapha || 0;
+      // Apply effects (IMPORTANT FIX)
+      for (let dosha in rule.effect) {
+        scores[dosha] += rule.effect[dosha];
+      }
 
-      // Collect explanation + recommendation
-      if (rule.explanation) explanations.push(rule.explanation);
-      if (rule.recommendation) recommendations.push(rule.recommendation);
+      // Collect explanation
+      if (rule.explanation) {
+        explanations.push(rule.explanation);
+      }
     }
   });
 
   // ================= NORMALIZE =================
-  const total = scores.vata + scores.pitta + scores.kapha;
+  const total = scores.Vata + scores.Pitta + scores.Kapha;
 
   let result = {
     vata: 0,
@@ -58,15 +58,14 @@ app.post("/api", (req, res) => {
   };
 
   if (total === 0) {
-    // fallback
     result = { vata: 33, pitta: 33, kapha: 34 };
   } else {
-    result.vata = Math.round((scores.vata / total) * 100);
-    result.pitta = Math.round((scores.pitta / total) * 100);
-    result.kapha = Math.round((scores.kapha / total) * 100);
+    result.vata = Math.round((scores.Vata / total) * 100);
+    result.pitta = Math.round((scores.Pitta / total) * 100);
+    result.kapha = Math.round((scores.Kapha / total) * 100);
   }
 
-  // Fix rounding to 100
+  // Fix rounding
   let sum = result.vata + result.pitta + result.kapha;
   if (sum !== 100) {
     result.kapha += 100 - sum;
@@ -80,17 +79,40 @@ app.post("/api", (req, res) => {
     dominant = "Kapha";
   }
 
+  // ================= SMART RECOMMENDATIONS =================
+  // (Auto-generate based on dominant dosha)
+  let recommendation = [];
+
+  if (dominant === "Vata") {
+    recommendation = [
+      "Maintain a regular routine",
+      "Eat warm, nourishing foods",
+      "Reduce stress and get proper sleep",
+    ];
+  } else if (dominant === "Pitta") {
+    recommendation = [
+      "Avoid spicy and oily foods",
+      "Stay cool and hydrated",
+      "Practice relaxation techniques",
+    ];
+  } else {
+    recommendation = [
+      "Stay active and exercise regularly",
+      "Avoid heavy and oily foods",
+      "Keep your routine dynamic",
+    ];
+  }
+
   // ================= RESPONSE =================
   res.json({
     vata: result.vata,
     pitta: result.pitta,
     kapha: result.kapha,
     dominant,
-    explanation: explanations.join(" | ") || "General balanced constitution.",
-    recommendation:
-      recommendations.length > 0
-        ? recommendations
-        : ["Maintain a balanced lifestyle."],
+    explanation:
+      explanations.join(" | ") ||
+      "Your body shows a balanced or unclear dosha pattern.",
+    recommendation,
   });
 });
 
