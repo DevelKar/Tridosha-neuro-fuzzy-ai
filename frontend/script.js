@@ -34,7 +34,7 @@ form.addEventListener("submit", async (e) => {
   formSection.innerHTML = `<p class="loading">Analyzing your constitution...</p>`;
 
   try {
-    const response = await fetch("https://YOUR_BACKEND_URL/api", {
+    const response = await fetch("https://0f28e602-bccc-4a2e-998e-79356b5f634b-00-1folxu58j4u1p.sisko.replit.dev/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
